@@ -99,7 +99,8 @@ module Account
   end
 
   def several_namespaces?
-    namespaces.size > 1
+    #admin will always have access to global namespace
+    (namespaces.size > 1 || admin)
   end
 
   def namespace_id
